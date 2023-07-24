@@ -12,6 +12,7 @@
 int main(__attribute__((unused)) int argc, char **argv)
 {
 	char *input = NULL;
+	char **cmd = NULL;
 
 	int stat = 0;
 	size_t len = 0;
@@ -37,13 +38,20 @@ int main(__attribute__((unused)) int argc, char **argv)
 		{
 			continue;
 		}
+		cmd = parse_command(input);
+		if (!cmd)
+		{
+			perror("Error parsing command");
+			free(input);
+			continue;
+		}
 		stat = execute_command(input, argv);
 		if (stat == -1)
 		{
 			perror("Command not found:\n");
 		}
 		wait(&stat);
-		free(input);
+		free(cmd);
 	}
 	return(stat);
 }
