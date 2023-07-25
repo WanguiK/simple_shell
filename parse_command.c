@@ -7,33 +7,34 @@
  */
 char **parse_command(char *input)
 {
-	char **arguments;
-	char *argument;
+	char **tokens = NULL;
+	char *argv;
 	int i;
 	int buffsize = BUFSIZ;
+	const char *delim = " ";
 
-	if (input[0] == ' ' && input[strlen(input)] == ' ')
+	if (input[0] == ' ' && input[_strlen(input)] == ' ')
 	{
 		exit(0);
 	}
-	if (input == NULL || strlen(input) == 0)
+	if (input == NULL || _strlen(input) == 0)
 	{
 		return (NULL);
 	}
-	arguments = malloc(sizeof(char *) * buffsize);
-	if (!arguments)
+	argv = malloc(sizeof(char *) * buffsize);
+	if (!tokens)
 	{
-		free(arguments);
+		free(tokens);
 		perror("hsh");
 		return (NULL);
 	}
-	argument = strtok(input, "\n\t\r\a ");
-	for (i = 0; argument; i++)
+	argv = strtok(input, delim);
+	for (i = 0; argv; i++)
 	{
-		arguments[i] = argument;
-		argument = strtok(NULL, "\n\t\r\a ");
+		tokens[i] = argv;
+		argv = strtok(NULL, delim);
 	}
-	arguments[i] = NULL;
+	tokens[i] = NULL;
 
-	return (arguments);
+	return (tokens);
 }
