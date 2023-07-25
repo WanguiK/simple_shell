@@ -20,7 +20,7 @@
 #include <linux/limits.h>
 
 char *_strncpy(char *dest, char *src, int num);
-int _strlen(char *s);
+int _strlen(const char *s);
 int _putchar(char c);
 int _atoi(char *s);
 void _puts(char *str);
@@ -54,7 +54,7 @@ void process_command_file(char *line, int count, FILE *fp, char **argv);
 void exit_bul_for_file(char **cmd, char *line, FILE *fd);
 char **parse_command(char *input);
 int handle_builtin(char **cmd, int er);
-int execute_command(char *input, char **argv);
+int execute_command(char **cmd, char **argv);
 void handle_signal(int sig);
 void display_error_message(char *input, int counter, char **argv);
 void display_illegal_number_error(char **argv, int error_count, char **cmd);
@@ -65,9 +65,9 @@ void free_environment_array(char **env_array);
 void print_unsigned_integer(unsigned int num);
 void print_integer(int num);
 int execute_builtin_echo(char **cmd);
-int path_command(char **cmd);
+char *path_command(char *cmd);
 char *build_command_path(char *token, char *value);
-char *get_env_variable(char *name);
+char *_getenv(const char *name);
 void help_env(void);
 void help_setenv(void);
 void help_unsetenv(void);

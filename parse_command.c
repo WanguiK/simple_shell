@@ -7,7 +7,7 @@
  */
 char **parse_command(char *input)
 {
-	char **tokens = NULL;
+	char **tokens = 0;
 	char *argv;
 	int i;
 	int buffsize = BUFSIZ;
@@ -15,7 +15,7 @@ char **parse_command(char *input)
 
 	if (input[0] == ' ' && input[_strlen(input)] == ' ')
 	{
-		exit(0);
+		return (NULL);
 	}
 	if (input == NULL || _strlen(input) == 0)
 	{

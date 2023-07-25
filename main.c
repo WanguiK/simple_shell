@@ -39,13 +39,13 @@ int main(__attribute__((unused)) int argc, char **argv)
 			continue;
 		}
 		cmd = parse_command(input);
-		if (!cmd)
+		if (cmd == NULL)
 		{
 			perror("Error parsing command");
 			free(input);
 			continue;
 		}
-		stat = execute_command(input, argv);
+		stat = execute_command(cmd, argv);
 		if (stat == -1)
 		{
 			perror("Command not found:\n");
