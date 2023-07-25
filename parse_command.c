@@ -21,7 +21,7 @@ char **parse_command(char *input)
 	{
 		return (NULL);
 	}
-	argv = malloc(sizeof(char *) * buffsize);
+	tokens = malloc(sizeof(char *) * buffsize);
 	if (!tokens)
 	{
 		free(tokens);
