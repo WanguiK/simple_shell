@@ -1,8 +1,9 @@
 #include "shell.h"
 
 /**
- * path_command -  Search In $PATH for executable command
+ * path_command -  search In $PATH for executable command
  * @cmd_name: Name of the command to search for
+ *
  * Return: Full path of the command on success, NULL on failure
  */
 char *path_command(char *cmd_name)
