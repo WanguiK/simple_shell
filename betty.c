@@ -1,9 +1,10 @@
 #include <stdio.h>
 
 /**
- * main - simple betty
+ * main - Simple betty
  *
  * Return: Always 0
+ *
  */
 int main(void)
 {
