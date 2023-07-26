@@ -2,7 +2,7 @@
 
 /**
  * add_numbers - Adds two numbers
- *
+ * project
  * @a: The first number
  * @b: The second number
  *
