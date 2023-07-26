@@ -43,6 +43,7 @@ char *_strncpy(char *dest, char *src, int n)
  * @s1: first string
  * @s2: second string
  * @n: amount of characters to compare
+ *
  * Return: 1 if the strings don't match otherwise 0
  */
 int _strncmp(const char *s1, const char *s2, size_t n)
