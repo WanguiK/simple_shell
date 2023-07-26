@@ -1,13 +1,31 @@
 #include <stdio.h>
 
 /**
- * main - Simple betty
+ * add_numbers - Adds two numbers
+ * @a: The first number
+ * @b: The second number
  *
- * Return: Always 0
+ * Return: The sum of the two numbers
+ */
+int add_numbers(int a, int b)
+{
+	return (a + b);
+}
+
+/**
+ * main - Entry point of the program
  *
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-	printf("Hello, world!\n");
+	int num1 = 5;
+	int num2 = 10;
+	int sum;
+
+	sum = add_numbers(num1, num2);
+
+	printf("The sum of %d and %d is %d\n", num1, num2, sum);
+
 	return (0);
 }

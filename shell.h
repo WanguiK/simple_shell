@@ -69,6 +69,7 @@ char *path_command(char *cmd);
 char *build_command_path(char *token, char *value);
 char *_getenv(const char *name);
 void help_env(void);
+int add_numbers(int a, int b);
 void help_setenv(void);
 void help_unsetenv(void);
 void help_history(void);
