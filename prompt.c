@@ -2,6 +2,7 @@
 
 /**
  * display_prompt - displays "$"
+ *
  */
 void display_prompt(void)
 {
