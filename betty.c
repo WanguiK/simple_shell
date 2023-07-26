@@ -2,6 +2,7 @@
 
 /**
  * add_numbers - Adds two numbers
+ *
  * @a: The first number
  * @b: The second number
  *
