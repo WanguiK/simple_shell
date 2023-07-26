@@ -54,7 +54,7 @@ void process_command_file(char *line, int count, FILE *fp, char **argv);
 void exit_bul_for_file(char **cmd, char *line, FILE *fd);
 char **parse_command(char *input);
 int handle_builtin(char **cmd, int er);
-int execute_command(char **cmd, char **argv);
+int execute_command(char *cmd, char **argv);
 void handle_signal(int sig);
 void display_error_message(char *input, int counter, char **argv);
 void display_illegal_number_error(char **argv, int error_count, char **cmd);
